@@ -141,3 +141,111 @@ CPS = merge(CPS, MetroAreaMap, by.x="MetroAreaCode", by.y="Code", all.x=TRUE)
 ```
 
 The first two arguments determine the data frames to be merged (they are called "x" and "y", respectively, in the subsequent parameters to the merge function). by.x="MetroAreaCode" means we're matching on the MetroAreaCode variable from the "x" data frame (CPS), while by.y="Code" means we're matching on the Code variable from the "y" data frame (MetroAreaMap). Finally, all.x=TRUE means we want to keep all rows from the "x" data frame (CPS), even if some of the rows' MetroAreaCode doesn't match any codes in MetroAreaMap (for those familiar with database terminology, this parameter makes the operation a left outer join instead of an inner join).
+
+
+
+
+To obtain the number of TRUE values in a vector of TRUE/FALSE values, you can use the sum() function. For instance, sum(c(TRUE, FALSE, TRUE, TRUE)) is 3. Therefore, we can obtain counts of people born in a particular country living in a particular metropolitan area with:
+
+```{r}
+sort(tapply(CPS$Country == "India", CPS$MetroArea, sum, na.rm=TRUE))
+```
+
+
+
+Linera regression 
+
+```{r}
+wine= read.csv("./edx/Analytic Edge/wine.csv")
+model = lm(Price ~ AGST, data = wine )
+summary(model)
+```
+
+SSE
+```{r}
+SSE=sum(model$residuals^2)
+SSE
+```
+
+Correlation 
+
+```{r}
+cor(wine$WinterRain, wine$Price)
+cor(wine)
+```
+
+Prediction
+
+```{r}
+wineTest=read.csv("./edx/Analytic Edge/wine_test.csv")
+predictTest=predict(model, newdata = wineTest)
+predictTest
+SSE=sum((wineTest$Price - predictTest)^2)
+SST=sum((wineTest$Price - mean(wine$Price))^2)
+1-SSE/SST
+```
+
+Change reference level for factor variable
+```{r}
+pisa_train$raceeth = relevel(pisa_train$raceeth, "White")
+
+pisa_test$raceeth = relevel(pisa_test$raceeth, "White")
+```
+
+RMSE
+```{r}
+pisa_test_pr=predict(lm_pisa, newdata = pisa_test)
+```
+
+Library for spliting data into data and test
+```{r}
+library(caTools)
+quality = read.csv("quality.csv")
+# Randomly split data
+set.seed(88)
+split = sample.split(quality$PoorCare, SplitRatio = 0.75)
+split
+
+# Create training and testing sets
+qualityTrain = subset(quality, split == TRUE)
+qualityTest = subset(quality, split == FALSE)
+```
+
+Logistic Regression Model
+```{r}
+QualityLog = glm(PoorCare ~ OfficeVisits + Narcotics, data=qualityTrain, family=binomial)
+summary(QualityLog)
+predictTrain = predict(QualityLog, type="response")
+```
+
+Analyze predictions
+```{r}
+summary(predictTrain)
+
+tapply(predictTrain, qualityTrain$PoorCare, mean)
+```
+
+# Confusion matrix for threshold of 0.5
+
+```{r}
+table(qualityTrain$PoorCare, predictTrain > 0.5)
+```
+
+
+Generate ROC curve
+```{r}
+library(ROCR)
+ROCRpred = prediction(predictTrain, qualityTrain$PoorCare)
+# Performance function
+ROCRperf = performance(ROCRpred, "tpr", "fpr")
+
+# Plot ROC curve
+plot(ROCRperf)
+
+# Add colors
+plot(ROCRperf, colorize=TRUE)
+
+# Add threshold labels 
+plot(ROCRperf, colorize=TRUE, print.cutoffs.at=seq(0,1,by=0.1), text.adj=c(-0.2,1.7))
+```
+
