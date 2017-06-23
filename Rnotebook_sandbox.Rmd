@@ -249,3 +249,29 @@ plot(ROCRperf, colorize=TRUE)
 plot(ROCRperf, colorize=TRUE, print.cutoffs.at=seq(0,1,by=0.1), text.adj=c(-0.2,1.7))
 ```
 
+
+Computing AUC
+The AUC of a model has the following nice interpretation: given a random patient from the dataset who actually received poor care, and a random patient from the dataset who actually received good care, the AUC is the perecentage of time that our model will classify which is which correctly.
+```{r}
+predictTest = predict(QualityLog, type="response", newdata=qualityTest)
+ROCRpredTest = prediction(predictTest, qualityTest$PoorCare)
+
+auc = as.numeric(performance(ROCRpredTest, "auc")@y.values)
+```
+
+
+```{r}
+
+# Multiple imputation
+polling = read.csv("PollingData.csv")
+simple = polling[c("Rasmussen", "SurveyUSA", "PropR", "DiffCount")]
+summary(simple)
+set.seed(144)
+imputed = complete(mice(simple))
+summary(imputed)
+polling$Rasmussen = imputed$Rasmussen
+polling$SurveyUSA = imputed$SurveyUSA
+summary(polling)
+
+```
+
