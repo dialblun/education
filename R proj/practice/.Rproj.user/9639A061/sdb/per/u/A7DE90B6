@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "gerber=read.csv(\"C:\\\\Users\\\\WALLI\\\\Desktop\\\\Di\\\\edx\\\\Analytic Edge\\\\gerber.csv\")\n\nlr1=glm(voting ~ civicduty + hawthorne + neighbors + self, data = gerber)\nlibrary(rpart)\nlibrary(rpart.plot)\nCARTmodel = rpart(voting ~ civicduty + hawthorne + self + neighbors, data=gerber)\nCARTmodel2 = rpart(voting ~ civicduty + hawthorne + self + neighbors, data=gerber, cp=0.0)\n",
+    "created" : 1499327505320.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "831468046",
+    "id" : "A7DE90B6",
+    "lastKnownWriteTime" : 201844544,
+    "last_content_update" : 1499328579828,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
