@@ -1,0 +1,15 @@
+"0","```r
+wineTest=read.csv(\"C:/Users/WALLI/Desktop/Di/edx/Analytic Edge//wine_test.csv\")
+predictTest=predict(model, newdata = wineTest)
+predictTest
+```"
+"1","       1        2 
+6.849618 6.743748 
+"
+"0","```r
+SSE=sum((wineTest$Price - predictTest)^2)
+SST=sum((wineTest$Price - mean(wine$Price))^2)
+1-SSE/SST
+```"
+"1","[1] 0.7882105
+"

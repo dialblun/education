@@ -1,0 +1,45 @@
+"0","```r
+summary(WHO)
+```"
+"1","                Country                      Region     Population         Under15     
+ Afghanistan        :  1   Africa               :46   Min.   :      1   Min.   :13.12  
+ Albania            :  1   Americas             :35   1st Qu.:   1696   1st Qu.:18.72  
+ Algeria            :  1   Eastern Mediterranean:22   Median :   7790   Median :28.65  
+ Andorra            :  1   Europe               :53   Mean   :  36360   Mean   :28.73  
+ Angola             :  1   South-East Asia      :11   3rd Qu.:  24535   3rd Qu.:37.75  
+ Antigua and Barbuda:  1   Western Pacific      :27   Max.   :1390000   Max.   :49.99  
+ (Other)            :188                                                               
+     Over60      FertilityRate   LifeExpectancy  ChildMortality    CellularSubscribers
+ Min.   : 0.81   Min.   :1.260   Min.   :47.00   Min.   :  2.200   Min.   :  2.57     
+ 1st Qu.: 5.20   1st Qu.:1.835   1st Qu.:64.00   1st Qu.:  8.425   1st Qu.: 63.57     
+ Median : 8.53   Median :2.400   Median :72.50   Median : 18.600   Median : 97.75     
+ Mean   :11.16   Mean   :2.941   Mean   :70.01   Mean   : 36.149   Mean   : 93.64     
+ 3rd Qu.:16.69   3rd Qu.:3.905   3rd Qu.:76.00   3rd Qu.: 55.975   3rd Qu.:120.81     
+ Max.   :31.92   Max.   :7.580   Max.   :83.00   Max.   :181.600   Max.   :196.41     
+                 NA's   :11                                        NA's   :10         
+  LiteracyRate        GNI        PrimarySchoolEnrollmentMale PrimarySchoolEnrollmentFemale
+ Min.   :31.10   Min.   :  340   Min.   : 37.20              Min.   : 32.50               
+ 1st Qu.:71.60   1st Qu.: 2335   1st Qu.: 87.70              1st Qu.: 87.30               
+ Median :91.80   Median : 7870   Median : 94.70              Median : 95.10               
+ Mean   :83.71   Mean   :13321   Mean   : 90.85              Mean   : 89.63               
+ 3rd Qu.:97.85   3rd Qu.:17558   3rd Qu.: 98.10              3rd Qu.: 97.90               
+ Max.   :99.80   Max.   :86440   Max.   :100.00              Max.   :100.00               
+ NA's   :91      NA's   :32      NA's   :93                  NA's   :93                   
+"
+"0","```r
+which.min(WHO$Under15)
+```"
+"1","[1] 86
+"
+"0","```r
+WHO$Country[86]
+```"
+"1","[1] Japan
+194 Levels: Afghanistan Albania Algeria Andorra Angola Antigua and Barbuda Argentina ... Zimbabwe
+"
+"0","```r
+WHO$Country[which.min(WHO$Over60)]
+```"
+"1","[1] United Arab Emirates
+194 Levels: Afghanistan Albania Algeria Andorra Angola Antigua and Barbuda Argentina ... Zimbabwe
+"

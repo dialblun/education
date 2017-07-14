@@ -1,0 +1,10 @@
+"0","```r
+# To do this, we can use the following trick. First define a vector of variable names called nonvars #- these are the variables that we won't use in our model.
+songs=read.csv(\"C:/Users/WALLI/Desktop/Di/edx/Analytic Edge/songs.csv\")
+songtrain=subset(songs, songs$year <= 2009)
+songtest=subset(songs, songs$year > 2009)
+nonvars = c(\"year\", \"songtitle\", \"artistname\", \"songID\", \"artistID\")
+#To remove these variables from your training and testing sets, type the following commands in your R #console:
+songtrain = songtrain[ , !(names(songtrain) %in% nonvars) ]
+songtest = songtest[ , !(names(songtest) %in% nonvars) ]
+```"

@@ -1,0 +1,30 @@
+"0","```r
+tapply(is.na(CPS$MetroAreaCode), CPS$State, mean)
+```"
+"1","             Alabama               Alaska              Arizona             Arkansas 
+          0.25872093           1.00000000           0.13154450           0.49049965 
+          California             Colorado          Connecticut             Delaware 
+          0.02048401           0.12991453           0.08568406           0.23396567 
+District of Columbia              Florida              Georgia               Hawaii 
+          0.00000000           0.03923092           0.19843249           0.24916627 
+               Idaho             Illinois              Indiana                 Iowa 
+          0.49868248           0.11221881           0.29141717           0.48694620 
+              Kansas             Kentucky            Louisiana                Maine 
+          0.36227390           0.50678979           0.16137931           0.59832081 
+            Maryland        Massachusetts             Michigan            Minnesota 
+          0.06937500           0.06492199           0.17825661           0.31506849 
+         Mississippi             Missouri              Montana             Nebraska 
+          0.69430894           0.32867133           0.83607908           0.58132376 
+              Nevada        New Hampshire           New Jersey           New Mexico 
+          0.13308190           0.56874530           0.00000000           0.24500907 
+            New York       North Carolina         North Dakota                 Ohio 
+          0.08060769           0.37304315           0.73738602           0.25122349 
+            Oklahoma               Oregon         Pennsylvania         Rhode Island 
+          0.32764281           0.21821925           0.17430025           0.00000000 
+      South Carolina         South Dakota            Tennessee                Texas 
+          0.31302774           0.70250000           0.35594170           0.14370496 
+                Utah              Vermont             Virginia           Washington 
+          0.21009772           0.65238095           0.19844226           0.18131868 
+       West Virginia            Wisconsin              Wyoming 
+          0.75585522           0.29932986           1.00000000 
+"

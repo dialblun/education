@@ -1,0 +1,24 @@
+"0","```r
+wine= read.csv(\"C:/Users/WALLI/Desktop/Di/edx/Analytic Edge/wine.csv\")
+model = lm(Price ~ AGST, data = wine )
+summary(model)
+```"
+"1","
+Call:
+lm(formula = Price ~ AGST, data = wine)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.78450 -0.23882 -0.03727  0.38992  0.90318 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -3.4178     2.4935  -1.371 0.183710    
+AGST          0.6351     0.1509   4.208 0.000335 ***
+---
+Signif. codes:  0 вЂ***вЂ™ 0.001 вЂ**вЂ™ 0.01 вЂ*вЂ™ 0.05 вЂ.вЂ™ 0.1 вЂ вЂ™ 1
+
+Residual standard error: 0.4993 on 23 degrees of freedom
+Multiple R-squared:  0.435,	Adjusted R-squared:  0.4105 
+F-statistic: 17.71 on 1 and 23 DF,  p-value: 0.000335
+"

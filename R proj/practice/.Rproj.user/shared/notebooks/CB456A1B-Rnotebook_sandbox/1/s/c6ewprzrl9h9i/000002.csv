@@ -1,0 +1,25 @@
+"0","```r
+```r
+table(WHO$Region)
+```
+```"
+"1","
+               Africa              Americas 
+                   46                    35 
+Eastern Mediterranean                Europe 
+                   22                    53 
+      South-East Asia       Western Pacific 
+                   11                    27 
+"
+"0","```r
+```r
+tapply(WHO$Over60, WHO$Region, mean)
+```
+```"
+"1","               Africa              Americas 
+             5.220652             10.943714 
+Eastern Mediterranean                Europe 
+             5.620000             19.774906 
+      South-East Asia       Western Pacific 
+             8.769091             10.162963 
+"

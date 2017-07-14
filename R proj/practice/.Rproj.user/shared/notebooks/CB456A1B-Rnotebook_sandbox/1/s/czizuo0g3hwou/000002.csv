@@ -1,0 +1,4 @@
+"0","```r
+Top5=subset(mvt, mvt$LocationDescription %in% c(\"STREET\", \"PARKING LOT/GARAGE(NON.RESID.)\", \"ALLEY\", \"GAS STATION\", \"DRIVEWAY - RESIDENTIAL\" ))
+Top5$LocationDescription = factor(Top5$LocationDescription)
+```"

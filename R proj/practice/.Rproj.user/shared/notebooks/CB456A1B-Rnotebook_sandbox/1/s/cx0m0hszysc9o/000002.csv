@@ -1,0 +1,83 @@
+"0","```r
+sort(table(mvt$LocationDescription))
+```"
+"1","
+    AIRPORT BUILDING NON-TERMINAL - SECURE AREA                  AIRPORT EXTERIOR - SECURE AREA 
+                                              1                                               1 
+                                ANIMAL HOSPITAL                                 APPLIANCE STORE 
+                                              1                                               1 
+                                      CTA TRAIN                         JAIL / LOCK-UP FACILITY 
+                                              1                                               1 
+                                      NEWSSTAND                                          BRIDGE 
+                                              1                                               2 
+              COLLEGE/UNIVERSITY RESIDENCE HALL                               CURRENCY EXCHANGE 
+                                              2                                               2 
+                                  BOWLING ALLEY                                  CLEANING STORE 
+                                              3                                               3 
+                          MEDICAL/DENTAL OFFICE                              ABANDONED BUILDING 
+                                              3                                               4 
+AIRPORT BUILDING NON-TERMINAL - NON-SECURE AREA                                      BARBERSHOP 
+                                              4                                               4 
+                 LAKEFRONT/WATERFRONT/RIVERBANK                                         LIBRARY 
+                                              4                                               4 
+                               SAVINGS AND LOAN  AIRPORT TERMINAL UPPER LEVEL - NON-SECURE AREA 
+                                              4                                               5 
+                                  CHA APARTMENT                                 DAY CARE CENTER 
+                                              5                                               5 
+                                   FIRE STATION                                 FOREST PRESERVE 
+                                              5                                               6 
+                                           BANK                               CONVENIENCE STORE 
+                                              7                                               7 
+                                     DRUG STORE                 OTHER COMMERCIAL TRANSPORTATION 
+                                              8                                               8 
+                                  ATHLETIC CLUB                   AIRPORT VENDING ESTABLISHMENT 
+                                              9                                              10 
+                            AIRPORT PARKING LOT                       SCHOOL, PRIVATE, BUILDING 
+                                             11                                              14 
+                            TAVERN/LIQUOR STORE                  FACTORY/MANUFACTURING BUILDING 
+                                             14                                              16 
+                                  BAR OR TAVERN                                       WAREHOUSE 
+                                             17                                              17 
+                            MOVIE HOUSE/THEATER                         RESIDENCE PORCH/HALLWAY 
+                                             18                                              18 
+                   NURSING HOME/RETIREMENT HOME                                         TAXICAB 
+                                             21                                              21 
+                               DEPARTMENT STORE                              HIGHWAY/EXPRESSWAY 
+                                             22                                              22 
+                       SCHOOL, PRIVATE, GROUNDS                              VEHICLE-COMMERCIAL 
+                                             23                                              23 
+             AIRPORT EXTERIOR - NON-SECURE AREA               OTHER RAILROAD PROP / TRAIN DEPOT 
+                                             24                                              28 
+                             SMALL RETAIL STORE                               CONSTRUCTION SITE 
+                                             33                                              35 
+                                       CAR WASH                      COLLEGE/UNIVERSITY GROUNDS 
+                                             44                                              47 
+                   GOVERNMENT BUILDING/PROPERTY                                      RESTAURANT 
+                                             48                                              49 
+              CHURCH/SYNAGOGUE/PLACE OF WORSHIP                              GROCERY FOOD STORE 
+                                             56                                              80 
+                      HOSPITAL BUILDING/GROUNDS                        SCHOOL, PUBLIC, BUILDING 
+                                            101                                             114 
+                                    HOTEL/MOTEL                    COMMERCIAL / BUSINESS OFFICE 
+                                            124                                             126 
+                    CTA GARAGE / OTHER PROPERTY                            SPORTS ARENA/STADIUM 
+                                            148                                             166 
+                                      APARTMENT                         SCHOOL, PUBLIC, GROUNDS 
+                                            184                                             206 
+                                  PARK PROPERTY                 POLICE FACILITY/VEH PARKING LOT 
+                                            255                                             266 
+                               AIRPORT/AIRCRAFT                         CHA PARKING LOT/GROUNDS 
+                                            363                                             405 
+                                       SIDEWALK                          VEHICLE NON-COMMERCIAL 
+                                            462                                             817 
+                                VACANT LOT/LAND                                RESIDENCE-GARAGE 
+                                            985                                            1176 
+                                      RESIDENCE                   RESIDENTIAL YARD (FRONT/BACK) 
+                                           1302                                            1536 
+                         DRIVEWAY - RESIDENTIAL                                     GAS STATION 
+                                           1675                                            2111 
+                                          ALLEY                                           OTHER 
+                                           2308                                            4573 
+                 PARKING LOT/GARAGE(NON.RESID.)                                          STREET 
+                                          14852                                          156564 
+"

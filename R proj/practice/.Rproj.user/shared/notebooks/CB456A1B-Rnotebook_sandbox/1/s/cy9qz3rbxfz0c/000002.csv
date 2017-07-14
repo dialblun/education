@@ -1,0 +1,6 @@
+"0","```r
+SSE=sum(model$residuals^2)
+SSE
+```"
+"1","[1] 5.734875
+"

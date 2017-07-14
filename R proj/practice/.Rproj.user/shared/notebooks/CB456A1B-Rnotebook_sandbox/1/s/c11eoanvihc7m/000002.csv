@@ -1,0 +1,10 @@
+"0","```r
+```r
+tapply(WHO$LiteracyRate, WHO$Region, min, na.rm = TRUE)
+```
+```"
+"1","               Africa              Americas Eastern Mediterranean                Europe 
+                 31.1                  75.2                  63.9                  95.2 
+      South-East Asia       Western Pacific 
+                 56.8                  60.6 
+"

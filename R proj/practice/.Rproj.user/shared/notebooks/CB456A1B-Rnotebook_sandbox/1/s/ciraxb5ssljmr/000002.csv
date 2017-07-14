@@ -1,0 +1,8 @@
+"0","```r
+table(qualityTrain$PoorCare, predictTrain > 0.5)
+```"
+"1","   
+    FALSE TRUE
+  0    70    4
+  1    15   10
+"

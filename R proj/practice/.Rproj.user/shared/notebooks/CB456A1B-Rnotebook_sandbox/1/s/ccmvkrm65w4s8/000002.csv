@@ -1,0 +1,85 @@
+"0","```r
+# Multiple imputation
+polling = read.csv(\"C:/Users/WALLI/Desktop/Di/edx/Analytic Edge/PollingData.csv\")
+simple = polling[c(\"Rasmussen\", \"SurveyUSA\", \"PropR\", \"DiffCount\")]
+summary(simple)
+```"
+"1","   Rasmussen          SurveyUSA            PropR          DiffCount      
+ Min.   :-41.0000   Min.   :-33.0000   Min.   :0.0000   Min.   :-19.000  
+ 1st Qu.: -8.0000   1st Qu.:-11.7500   1st Qu.:0.0000   1st Qu.: -6.000  
+ Median :  1.0000   Median : -2.0000   Median :0.6250   Median :  1.000  
+ Mean   :  0.0404   Mean   : -0.8243   Mean   :0.5259   Mean   : -1.269  
+ 3rd Qu.:  8.5000   3rd Qu.:  8.0000   3rd Qu.:1.0000   3rd Qu.:  4.000  
+ Max.   : 39.0000   Max.   : 30.0000   Max.   :1.0000   Max.   : 11.000  
+ NA's   :46         NA's   :71                                           
+"
+"0","```r
+set.seed(144)
+library(\"mice\")
+```"
+"1","ж”јг№¦ж”јгё°ж”јг№Ўж”јгёµжјгёІ г¤јгё±miceг¤јгёІ ж”јгё±жјг№ўж”јг№ў жјгё±ж”јг№Ґж”јгё±жјгё°ж”јгё°ж”јг№¤ ж”јг№¦ж”јг№Ґж”јгёґ R ж”јгёІж”јгёµжјгё°жјгё±ж”јгёёж”јгёё 3.3.3
+"
+"0","```r
+imputed = complete(mice(simple))
+```"
+"1","
+ iter imp variable
+  1   1  Rasmussen  SurveyUSA
+  1   2  Rasmussen  SurveyUSA
+  1   3  Rasmussen  SurveyUSA
+  1   4  Rasmussen  SurveyUSA
+  1   5  Rasmussen  SurveyUSA
+  2   1  Rasmussen  SurveyUSA
+  2   2  Rasmussen  SurveyUSA
+  2   3  Rasmussen  SurveyUSA
+  2   4  Rasmussen  SurveyUSA
+  2   5  Rasmussen  SurveyUSA
+  3   1  Rasmussen  SurveyUSA
+  3   2  Rasmussen  SurveyUSA
+  3   3  Rasmussen  SurveyUSA
+  3   4  Rasmussen  SurveyUSA
+  3   5  Rasmussen  SurveyUSA
+  4   1  Rasmussen  SurveyUSA
+  4   2  Rasmussen  SurveyUSA
+  4   3  Rasmussen  SurveyUSA
+  4   4  Rasmussen  SurveyUSA
+  4   5  Rasmussen  SurveyUSA
+  5   1  Rasmussen  SurveyUSA
+  5   2  Rasmussen  SurveyUSA
+  5   3  Rasmussen  SurveyUSA
+  5   4  Rasmussen  SurveyUSA
+  5   5  Rasmussen  SurveyUSA
+"
+"0","```r
+summary(imputed)
+```"
+"1","   Rasmussen         SurveyUSA           PropR          DiffCount      
+ Min.   :-41.000   Min.   :-33.000   Min.   :0.0000   Min.   :-19.000  
+ 1st Qu.: -8.000   1st Qu.:-11.000   1st Qu.:0.0000   1st Qu.: -6.000  
+ Median :  3.000   Median :  1.000   Median :0.6250   Median :  1.000  
+ Mean   :  1.731   Mean   :  1.517   Mean   :0.5259   Mean   : -1.269  
+ 3rd Qu.: 11.000   3rd Qu.: 18.000   3rd Qu.:1.0000   3rd Qu.:  4.000  
+ Max.   : 39.000   Max.   : 30.000   Max.   :1.0000   Max.   : 11.000  
+"
+"0","```r
+polling$Rasmussen = imputed$Rasmussen
+polling$SurveyUSA = imputed$SurveyUSA
+summary(polling)
+```"
+"1","         State          Year        Rasmussen         SurveyUSA         DiffCount      
+ Arizona    :  3   Min.   :2004   Min.   :-41.000   Min.   :-33.000   Min.   :-19.000  
+ Arkansas   :  3   1st Qu.:2004   1st Qu.: -8.000   1st Qu.:-11.000   1st Qu.: -6.000  
+ California :  3   Median :2008   Median :  3.000   Median :  1.000   Median :  1.000  
+ Colorado   :  3   Mean   :2008   Mean   :  1.731   Mean   :  1.517   Mean   : -1.269  
+ Connecticut:  3   3rd Qu.:2012   3rd Qu.: 11.000   3rd Qu.: 18.000   3rd Qu.:  4.000  
+ Florida    :  3   Max.   :2012   Max.   : 39.000   Max.   : 30.000   Max.   : 11.000  
+ (Other)    :127                                                                       
+     PropR          Republican    
+ Min.   :0.0000   Min.   :0.0000  
+ 1st Qu.:0.0000   1st Qu.:0.0000  
+ Median :0.6250   Median :1.0000  
+ Mean   :0.5259   Mean   :0.5103  
+ 3rd Qu.:1.0000   3rd Qu.:1.0000  
+ Max.   :1.0000   Max.   :1.0000  
+                                  
+"

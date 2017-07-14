@@ -1,0 +1,20 @@
+"0","```r
+USDA$HighFat = as.numeric(USDA$TotalFat > mean(USDA$TotalFat, na.rm= TRUE))
+table(USDA$HighSodium, USDA$HighFat)
+```"
+"1","   
+       0    1
+  0 3529 1355
+  1 1378  712
+"
+"0","```r
+tapply(USDA$VitaminC,USDA$HighSodium, summary, na.rm = TRUE)
+```"
+"1","$`0`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   0.00    0.00    0.00   10.72    4.00 2400.00     154 
+
+$`1`
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+  0.000   0.000   0.000   6.202   1.500 560.000     116 
+"

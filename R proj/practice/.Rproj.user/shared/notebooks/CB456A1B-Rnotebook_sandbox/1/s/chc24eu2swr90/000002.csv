@@ -1,0 +1,32 @@
+"0","```r
+QualityLog = glm(PoorCare ~ OfficeVisits + Narcotics, data=qualityTrain, family=binomial)
+summary(QualityLog)
+```"
+"1","
+Call:
+glm(formula = PoorCare ~ OfficeVisits + Narcotics, family = binomial, 
+    data = qualityTrain)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-2.06303  -0.63155  -0.50503  -0.09689   2.16686  
+
+Coefficients:
+             Estimate Std. Error z value Pr(>|z|)    
+(Intercept)  -2.64613    0.52357  -5.054 4.33e-07 ***
+OfficeVisits  0.08212    0.03055   2.688  0.00718 ** 
+Narcotics     0.07630    0.03205   2.381  0.01728 *  
+---
+Signif. codes:  0 вЂ***вЂ™ 0.001 вЂ**вЂ™ 0.01 вЂ*вЂ™ 0.05 вЂ.вЂ™ 0.1 вЂ вЂ™ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 111.888  on 98  degrees of freedom
+Residual deviance:  89.127  on 96  degrees of freedom
+AIC: 95.127
+
+Number of Fisher Scoring iterations: 4
+"
+"0","```r
+predictTrain = predict(QualityLog, type=\"response\")
+```"

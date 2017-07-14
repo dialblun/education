@@ -1,0 +1,9 @@
+"0","```r
+CPS=read.csv(\"C:/Users/WALLI/Desktop/Di/edx/Analytic Edge/CPSData.csv\")
+table(CPS$Sex, is.na(CPS$Married))
+```"
+"1","        
+         FALSE  TRUE
+  Female 55264 12217
+  Male   50700 13121
+"

@@ -1,0 +1,6 @@
+"0","```r
+pisa_train = read.csv(\"C:/Users/WALLI/Desktop/Di/edx/Analytic Edge/pisa2009train.csv\")
+pisa_test= read.csv(\"C:/Users/WALLI/Desktop/Di/edx/Analytic Edge/pisa2009test.csv\")
+pisa_train$raceeth = relevel(pisa_train$raceeth, \"White\")
+pisa_test$raceeth = relevel(pisa_test$raceeth, \"White\")
+```"

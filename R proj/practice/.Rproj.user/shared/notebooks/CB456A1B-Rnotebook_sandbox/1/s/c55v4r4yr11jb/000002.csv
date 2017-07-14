@@ -1,0 +1,8 @@
+"0","```r
+library(ROCR)
+ROCRpred = prediction(predictTrain, qualityTrain$PoorCare)
+# Performance function
+ROCRperf = performance(ROCRpred, \"tpr\", \"fpr\")
+# Plot ROC curve
+plot(ROCRperf)
+```"

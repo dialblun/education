@@ -1,0 +1,6 @@
+"0","```r
+plot(CocaCola$Date, CocaCola$StockPrice, type = \"l\", col = \"red\")
+```"
+"1","Error in plot(CocaCola$Date, CocaCola$StockPrice, type = \"l\", col = \"red\") : 
+  object 'CocaCola' not found
+"

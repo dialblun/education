@@ -1,0 +1,4 @@
+"0","```r
+# Add colors
+plot(ROCRperf, colorize=TRUE)
+```"

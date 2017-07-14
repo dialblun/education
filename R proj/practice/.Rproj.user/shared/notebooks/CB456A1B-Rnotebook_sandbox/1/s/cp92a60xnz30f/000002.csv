@@ -1,0 +1,6 @@
+"0","# Convert to a data frame"
+"0","tweetsSparse = as.data.frame(as.matrix(sparse))"
+"0","# Make all variable names R-friendly"
+"0","colnames(tweetsSparse) = make.names(colnames(tweetsSparse))"
+"0","# Add dependent variable"
+"0","tweetsSparse$Negative = tweets$Negative"

@@ -1,0 +1,6 @@
+"0","```r
+pisa_test_pr=predict(lm_pisa, newdata = pisa_test)
+```"
+"1","Error in predict(lm_pisa, newdata = pisa_test) : 
+  object 'lm_pisa' not found
+"
